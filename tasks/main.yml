@@ -1,0 +1,31 @@
+---
+- name: Setup your server hostname
+  hostname:
+    name: "{{ server_hostname }}"
+
+- name: Add hostname to /etc/hosts
+  lineinfile:
+    dest: /etc/hosts
+    regexp: '^127\.0\.0\.1[ \t]+localhost'
+    line: '127.0.0.1 localhost {{ server_hostname }}'
+    state: present
+
+- name: Install OS prerequisites packages
+  apt: pkg="{{ item }}" update_cache=yes cache_valid_time=86400 state=present
+  with_list: "{{ server_pkg_list }}"
+  when: ansible_os_family == "Debian"
+
+- name: Python3 pip upgrade
+  command: pip3 install --upgrade pip=="{{ pip3_version }}"
+  when: pip3_upgrade
+
+- name: Python pip packages installation
+  pip:
+    name: "{{ item }}"
+  with_list: "{{ server_pkg_list_pip }}"
+
+- name: Python pip packages installation with version
+  pip:
+    name: "{{ item[0] }}"
+    version: "{{ item[1] }}"
+  with_list: "{{ server_pkg_list_pip_ver }}"

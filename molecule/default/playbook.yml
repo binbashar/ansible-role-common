@@ -1,0 +1,18 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=yes cache_valid_time=600
+      when: ansible_os_family == 'Debian'
+
+  roles:
+    - role: binbash_inc.ansible_role_common
+      server_hostname: "infra-server"
+      server_pkg_list: [python3-pip, unzip, vim, zip]
+      server_pkg_list_pip: [awscli, boto, boto3, pyOpenSSL]
+      server_pkg_list_pip_ver: [[ansible, 2.8.7], [docker, 4.1.0]]
+      server_pip3_upgrade: true
+      server_pip3_version: 19.3.1
