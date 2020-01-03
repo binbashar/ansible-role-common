@@ -1,6 +1,6 @@
 # Ansible Role: binbash_inc.ansible_role_common
 
-**Ansible Role to install your Server pre-requisite packages including python pip packages.**
+**Ansible Role to install your Server pre-requisites packages including python pip packages.**
 
 ## Requirements
 
