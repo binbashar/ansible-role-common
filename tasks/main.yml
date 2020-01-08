@@ -16,8 +16,8 @@
   when: ansible_os_family == "Debian"
 
 - name: Python3 pip upgrade
-  command: pip3 install --upgrade pip=="{{ pip3_version }}"
-  when: pip3_upgrade
+  command: pip3 install --upgrade pip=="{{ server_pip3_version }}"
+  when: server_pip3_upgrade
 
 - name: Python pip packages installation
   pip:
