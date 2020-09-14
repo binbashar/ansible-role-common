@@ -68,6 +68,6 @@ MIT / BSD
   <img src="./%40doc/figures/circleci-logo.png" alt="circleci" width="130"/>
 </div>
 
-- [**pipeline-job**](https://app.circleci.com/pipelines/github/binbashar/ansible-role-certbot) (**NOTE:** Will only run after merged PR)
-- [**releases**](https://github.com/binbashar/ansible-role-certbot/releases) 
-- [**changelog**](https://github.com/binbashar/ansible-role-certbot/blob/master/CHANGELOG.md) 
+- [**pipeline-job**](https://app.circleci.com/pipelines/github/binbashar/ansible-role-common) (**NOTE:** Will only run after merged PR)
+- [**releases**](https://github.com/binbashar/ansible-role-common/releases) 
+- [**changelog**](https://github.com/binbashar/ansible-role-common/blob/master/CHANGELOG.md) 
