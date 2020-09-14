@@ -69,6 +69,7 @@ jobs:
               echo "$(git status)"
               echo "==============================================================================================="
             fi
+
       - run:
           name: ansible-init
           command: make init
