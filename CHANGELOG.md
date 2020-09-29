@@ -7,6 +7,14 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.9"></a>
+## [v0.0.9] - 2020-09-29
+
+- BBL-381 | moving unnesessary line in makefile
+- BBL-381 | setting molecule OS versions
+- BBL-381 | molecule test updated
+
+
 <a name="v0.0.8"></a>
 ## [v0.0.8] - 2020-09-24
 
@@ -69,7 +77,8 @@ All notable changes to this project will be documented in this file.
 - BBL-156 initial commit
 
 
-[Unreleased]: https://github.com/binbashar/ansible-role-common/compare/v0.0.8...HEAD
+[Unreleased]: https://github.com/binbashar/ansible-role-common/compare/v0.0.9...HEAD
+[v0.0.9]: https://github.com/binbashar/ansible-role-common/compare/v0.0.8...v0.0.9
 [v0.0.8]: https://github.com/binbashar/ansible-role-common/compare/v0.0.7...v0.0.8
 [v0.0.7]: https://github.com/binbashar/ansible-role-common/compare/v0.0.6...v0.0.7
 [v0.0.6]: https://github.com/binbashar/ansible-role-common/compare/v0.0.5...v0.0.6
