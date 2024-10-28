@@ -15,8 +15,9 @@
   with_list: "{{ server_pkg_list }}"
   when: ansible_os_family == "Debian"
 
+# TODO Had to add the following extra arg otherwise pip was failing with the above error
 - name: Python3 pip upgrade
-  command: pip3 install --upgrade pip=="{{ server_pip3_version }}"
+  command: pip3 install {{ common_pip_extra_args }} --upgrade pip=="{{ server_pip3_version }}"
   when: server_pip3_upgrade
 
 - name: Python pip packages installation
