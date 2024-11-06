@@ -7,3 +7,6 @@ server_pkg_list_pip_ver: [[ansible, 2.8.7], [docker, 4.1.0]]
 
 server_pip3_upgrade: false
 server_pip3_version: 19.3.1
+
+# Upgrading Pip will fail in Ubuntu 23 (as it is bundled with Python 3.11)
+common_pip_extra_args: "{{ '--break-system-packages' if ansible_distribution_release == 'lunar' else '' }}"
