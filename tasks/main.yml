@@ -10,6 +10,17 @@
     line: '127.0.0.1 localhost {{ server_hostname }}'
     state: present
 
+- name: Update apt sources to old-releases
+  lineinfile:
+    path: /etc/apt/sources.list
+    regexp: '^(deb|deb-src) http://.*.ubuntu.com/ubuntu'
+    line: '\1 http://old-releases.ubuntu.com/ubuntu'
+    state: present
+
+- name: Update apt cache
+  apt:
+    update_cache: yes
+    
 - name: Install OS prerequisites packages
   apt: pkg="{{ item }}" update_cache=yes cache_valid_time=86400 state=present
   with_list: "{{ server_pkg_list }}"
